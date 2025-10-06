@@ -31,9 +31,7 @@ export default function MovieModal({ movie, onClose }: MovieModalProps) {
   if (!modalRoot) return null;
 
   const imgPath = movie.backdrop_path ?? movie.poster_path ?? null;
-  const imgSrc = imgPath
-    ? `https://image.tmdb.org/t/p/original${imgPath}`
-    : null;
+  const imgSrc = imgPath ? `https://image.tmdb.org/t/p/w780${imgPath}` : null;
 
   const onBackdropClick = (e: MouseEvent<HTMLDivElement>) => {
     if (e.target === e.currentTarget) onClose();
